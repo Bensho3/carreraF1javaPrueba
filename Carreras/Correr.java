@@ -30,16 +30,16 @@ public class Correr implements Runnable{
   public void avanza(int ava){
 
     switch(Thread.currentThread().getName()){
-      case "Caballo 1":
+      case "Monoplaza 1":
         Carrera.jbar.setValue(ava);
         break;
-      case "Caballo 2":
+      case "Monoplaza 2":
         Carrera.jbar2.setValue(ava);
         break;
-      case "Caballo 3":
+      case "Monoplaza 3":
         Carrera.jbar3.setValue(ava);
         break;
-      case "Caballo 4":
+      case "Monoplaza 4":
         Carrera.jbar4.setValue(ava);
         break;
       }

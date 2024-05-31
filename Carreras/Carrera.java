@@ -5,7 +5,7 @@ import javax.swing.*;
 import java.util.*;
 
 public class Carrera extends JFrame{
-  private JPanel p1;
+  private JLabel p1;
   private JLabel cab, cab2, cab3, cab4, meta;
   public static JProgressBar jbar, jbar2, jbar3, jbar4, aux;
   private JButton btnRun;
@@ -13,7 +13,7 @@ public class Carrera extends JFrame{
 
 
   public Carrera(){
-    setTitle("Carrera de caballos");
+    setTitle("Carrera de Formula 1");
     setSize(600, 360);
     setLayout(new BorderLayout());
     initComponents();
@@ -23,28 +23,29 @@ public class Carrera extends JFrame{
   }
 
   public void initComponents(){
-    p1 = new JPanel();
-    p1.setBackground(new Color(153,255,255));
+    p1 = new JLabel();
+    p1.setIcon(new ImageIcon("Carreras/Imagenes/fondo.PNG"));
     p1.setLayout(null);
+    p1.setBounds(0,0,600,360);
 
 
     //etiquetas: Nombre/ posicion
     cab = new JLabel();
-    cab.setIcon(new ImageIcon("Carreras/Imagenes/icono.PNG"));
+    cab.setIcon(new ImageIcon("Carreras/Imagenes/icono3.PNG"));
     cab2 = new JLabel();
-    cab2.setIcon(new ImageIcon("Carreras/Imagenes/icono.PNG"));
+    cab2.setIcon(new ImageIcon("Carreras/Imagenes/icono2.PNG"));
     cab3 = new JLabel();
     cab3.setIcon(new ImageIcon("Carreras/Imagenes/icono.PNG"));
     cab4 = new JLabel();
-    cab4.setIcon(new ImageIcon("Carreras/Imagenes/icono.PNG"));
+    cab4.setIcon(new ImageIcon("Carreras/Imagenes/icono4.PNG"));
     meta = new JLabel();
     meta.setIcon(new ImageIcon("Carreras/Imagenes/meta.PNG"));
 
 
-    cab.setBounds(10, 10, 85, 40);
-    cab2.setBounds(10, 80 , 85, 40);
-    cab3.setBounds(10, 140, 85, 40);
-    cab4.setBounds(10, 200, 85, 40);
+    cab.setBounds(10, 10, 99, 67);
+    cab2.setBounds(10, 80 , 99, 67);
+    cab3.setBounds(10, 140, 99, 67);
+    cab4.setBounds(10, 200, 99, 67);
     meta.setBounds(530, 10, 30, 230 );
 
     //btnRun
@@ -62,7 +63,7 @@ public class Carrera extends JFrame{
     jbar.setBounds(110, 17, 400, 30);
 
     jbar2 = new JProgressBar();
-    jbar2.setForeground(new Color(255,51,102));
+    jbar2.setForeground(Color.ORANGE);
     jbar2.setStringPainted(true);
     jbar2.setBounds(110, 80, 400, 30);
 
@@ -72,7 +73,7 @@ public class Carrera extends JFrame{
     jbar3.setBounds(110, 143, 400, 30);
 
     jbar4 = new JProgressBar();
-    jbar4.setForeground(Color.YELLOW);
+    jbar4.setForeground(Color.DARK_GRAY);
     jbar4.setStringPainted(true);
     jbar4.setBounds(110, 206, 400, 30);
 
@@ -106,7 +107,7 @@ public class Carrera extends JFrame{
 
       for(int i=0; i<4; i++){
         aux = new Thread(c);
-        aux.setName("Caballo "+(i+1));
+        aux.setName("Monoplaza "+(i+1));
         arr.add(aux);
         arr.get(i).start();
       }
